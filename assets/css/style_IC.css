@@ -1,0 +1,342 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #fdda24;
+  --secondary-color: #292929;
+  --text-field: #707070;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
+  font-size: 16px;
+}
+
+main {
+  position: relative;
+}
+
+.step {
+  opacity: 0;
+  transition: all 0.25s;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.step__show {
+  opacity: 1;
+  z-index: 10;
+}
+
+.step-1 {
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid #ccc;
+  /* Define el borde del cuadro */
+  border-radius: 15px;
+  /* Redondea los bordes del cuadro */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  /* Añade una sombra suave */
+  padding: 20px;
+  /* Añade espacio dentro del cuadro */
+}
+
+.title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title span:first-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 25%;
+  margin-right: 1rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 25%;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-right: 0.5rem;
+  font-weight: bold;
+  transition: all 0.25s;
+}
+
+.menu li:hover span {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#step-2 .container {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+#step-2 .simulator__show {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  opacity: 1;
+}
+
+.simulator {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.column-full {
+  grid-column: 1 / span 2;
+}
+
+.column-left {
+  grid-column: 1 / 2;
+}
+
+.column-right {
+  grid-column: 2 / 3;
+}
+
+.simulator label {
+  display: flex;
+  flex-direction: column;
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.simulator input {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid var(--text-field);
+  transition: all 0.25s;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+}
+
+.simulator input:focus {
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid var(--primary-color);
+  box-shadow: none;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  background-color: var(--text-field);
+  color: #fff;
+  width: 50%;
+  grid-column: 1 / span 2;
+  padding: 0.875rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 100px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.btn:focus {
+  outline: none;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.result {
+  width: 100%;
+  grid-column: 1 / span 2;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 10px;
+  font-weight: bold;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.result__show {
+  opacity: 1;
+  padding: 0.875rem;
+  max-height: 1000000px;
+  border: 3px solid var(--primary-color);
+}
+
+/* Estilos para el tooltip */
+.tooltip {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #fdda24;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  z-index: 9999;
+}
+
+.tooltip-text {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background-color: #fdda24;
+  color: #000;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  z-index: 10000;
+}
+
+.tooltip-text::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 15px;
+  border-style: solid;
+  border-width: 8px 8px 0;
+  border-color: #fdda24 transparent;
+}
+
+#tooltipBtn:hover+.tooltip-text,
+#tooltipBtn:focus+.tooltip-text {
+  display: block;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #fdda24;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  z-index: 9999;
+  /* Asegura que esté encima de otros elementos */
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+  fill: #292929;
+  /* Color de la flecha */
+}
+
+.back-button:hover {
+  background-color: #f5c12d;
+  /* Cambia el color al pasar el cursor */
+}
+
+#ultimo + div{
+  visibility: hidden;
+}
+
+.formula-box {
+  flex: 1; /* Para que ocupe todo el espacio disponible */
+  margin-right: 20px; /* Espacio entre la caja de fórmulas y el menú */
+  margin-left: auto; /* Centra la caja de fórmulas horizontalmente */
+}
+
+
+
+.formula-box h2 {
+  margin-bottom: 10px;
+}
+
+.formula-box ul {
+  list-style-type: none; /* Eliminar los puntos de la lista */
+  padding: 0; /* Eliminar el espacio interior */
+}
+
+.formula-box li {
+  margin-bottom: 5px;
+}

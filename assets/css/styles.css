@@ -1,0 +1,136 @@
+:root {
+  --primary-color: #fdda24;
+  --secondary-color: #292929;
+  --text-field: #707070;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  margin-bottom: 50px;
+  font-size: 2em;
+}
+
+.menu {
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 25%;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-right: 0.5rem;
+  font-weight: bold;
+  transition: all 0.25s;
+}
+
+.menu li:hover span {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.menu button {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.5em;
+}
+
+.menu button:hover {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.tooltip {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #fdda24;
+  /* Amarillo */
+  color: #000;
+  /* Negro */
+  border-radius: 50%;
+  /* Forma circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.tooltip-text {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background-color: #fdda24;
+  /* Amarillo */
+  color: #000;
+  /* Negro */
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  z-index: 999;
+}
+
+.tooltip-text::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 15px;
+  border-style: solid;
+  border-width: 8px 8px 0;
+  border-color: #fdda24 transparent;
+}
+
+
+.menu li .tooltip {
+  display: none;
+  /* Ocultar tooltip por defecto */
+}
+
+#ultimo+div {
+  visibility: hidden;
+}

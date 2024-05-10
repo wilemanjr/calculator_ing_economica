@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style_IC.css" />
+    <title>Ingeniería económica</title>
+  </head>
+  <body>
+    <main>
+      <section id="step-1" class="step step-1 step__show">
+        <h2 class="title">¿Qué quieres calcular?</h2>
+        <div class="container">
+          <ul class="menu">
+            <li id="vf"><span>VF</span>Valor futuro</li>
+            <li id="vp"><span>VP</span>Valor presente</li>
+            <li id="avf"><span>AVF</span>Anualidad con valor futuro</li>
+          </ul>
+        </div>
+      </section>
+      <section id="step-2" class="step step-2">
+        <!-- Aqui empieza el valor futuro -->
+        <div class="container">
+          <h2 class="title"><span>VF</span>Valor futuro</h2>
+          <form id="simulator_vf" class="simulator">
+            <label for="field_a" class="column-full">
+              Anualidad (A)
+              <input type="number" id="field_a" />
+            </label>
+
+            <label for="field_i" class="column-full">
+              Interés del periodo
+              <input type="number" id="field_i" />
+            </label>
+
+
+            <label for="field_n" class="column-full">
+              Total de periodos
+              <input type="number" id="field_n" />
+            </label>
+
+            <label for="time-format">Formato de periodo:</label>
+            <select id="time-format">
+              <option value="anios">Años</option>
+              <option value="meses">Meses</option>
+              <option value="dias">Días</option></select>
+            
+            <label for="field_g" class="column-full">
+                Gradiente (G)
+                <input type="number" id="field_g" />
+            </label><br />
+            <div class="result"></div>
+            <button class="btn btn-primary">Calcular</button>
+            <button class="btn btn-primary btn-return">Volver</button>
+          </form>
+        </div>
+        <!-- Aqui termina el valor futuro -->
+
+        <!-- Aqui empieza el valor presente -->
+        <div class="container">
+            <h2 class="title"><span>VP</span>Valor presente</h2>
+            <form id="simulator_vp" class="simulator">
+              <label for="field_a" class="column-full">
+                Anualidad (A)
+                <input type="number" id="field_a" />
+              </label>
+  
+              <label for="field_i" class="column-full">
+                Interés del periodo
+                <input type="number" id="field_i" />
+              </label>
+  
+  
+              <label for="field_n" class="column-full">
+                Total de periodos
+                <input type="number" id="field_n" />
+              </label>
+  
+              <label for="time-format">Formato de periodo:</label>
+              <select id="time-format">
+                <option value="anios">Años</option>
+                <option value="meses">Meses</option>
+                <option value="dias">Días</option></select
+              >
+              
+              <label for="field_g" class="column-full">
+                  Gradiente (G)
+                  <input type="number" id="field_g" />
+              </label><br />
+              <div class="result"></div>
+              <button class="btn btn-primary">Calcular</button>
+              <button class="btn btn-primary btn-return">Volver</button>
+            </form>
+          </div>
+        <!-- Aqui termina el valor presente -->
+
+        <!-- Aqui empieza anualidad con valor futuro -->
+
+        <div class="container">
+          <h2 class="title"><span>AVF</span>Anualidad con valor futuro</h2>
+          <form id="simulator_avf" class="simulator">
+            <label for="field_vp" class="column-full"
+              >Valor futuro (VF)
+              <input type="number" id="field_vf" />
+            </label>
+            
+            <label for="field_i" class="column-full">
+                Interés del periodo
+                <input type="number" id="field_i" />
+            </label>
+  
+  
+              <label for="field_n" class="column-full">
+                Total de periodos
+                <input type="number" id="field_n" />
+              </label>
+  
+              <label for="time-format">Formato de periodo:</label>
+              <select id="time-format">
+                <option value="anios">Años</option>
+                <option value="meses">Meses</option>
+                <option value="dias">Días</option></select
+              >
+              
+              <label for="field_g" class="column-full">
+                  Gradiente (G)
+                  <input type="number" id="field_g" />
+              </label><br />
+              <div class="result"></div>
+              <button class="btn btn-primary">Calcular</button>
+              <button class="btn btn-primary btn-return">Volver</button>
+          </form>
+        </div>
+        <!-- Aqui termina anualidad con valor futuro -->
+
+      </section>
+    </main>
+    <button id="tooltipBtn" class="tooltip">?</button>
+    <div id="tooltip" class="tooltip-text">
+        <strong> Anualidad:</strong>
+        <p>
+          Una anualidad es una serie de pagos iguales realizados a intervalos
+          regulares de tiempo, como mensual o anualmente. Estos pagos pueden ser
+          tanto ingresos como egresos, dependiendo del contexto. En el ámbito
+          financiero, las anualidades se utilizan comúnmente para calcular pagos de
+          préstamos, pensiones, arrendamientos, entre otros.
+        </p>
+        <strong>Fórmula de Anualidad:</strong>
+        <p>
+          A = P × ((1 - (1 + i)^(-n)) / i)
+        </p>
+      
+        <strong>Gradiente:</strong>
+        <p>
+          En el contexto financiero, un gradiente es una serie de pagos que aumentan
+          o disminuyen en una cantidad constante en cada periodo. Se distingue del
+          concepto de anualidad porque los pagos no son iguales en cada periodo,
+          sino que aumentan o disminuyen de manera constante.
+        </p>
+        <strong>Fórmula de Gradiente:</strong>
+        <p>
+          G = A × ((1 + i)^n - 1) / i
+        </p>
+      
+        Desarrollado por <strong>Daniel Pinedo</strong>,
+        <strong>Camilo Difilippo</strong> y <strong>Wilson Manjarres</strong><br />
+        Todos los derechos reservados © 2024
+      </div>
+
+    <a id="backButton" class="back-button" href="../../index.html">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+        />
+      </svg>
+    </a>
+    <script src="../js/script_G.js" defer></script>
+    <div id="ultimo"></div>
+  </body>
+</html>

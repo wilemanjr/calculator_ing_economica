@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style_IC.css" />
+    <title>Ingeniería económica</title>
+  </head>
+  <body>
+    <main>
+      <section id="step-1" class="step step-1 step__show">
+        <h2 class="title">¿Qué quieres calcular?</h2>
+        <div class="container">
+          <ul class="menu">
+            <li id="I"><span>IS</span>Interés simple</li>
+            <li id="vf"><span>VF</span>Valor futuro</li>
+            <li id="vp"><span>VP</span>Valor presente</li>
+            <li id="i"><span>i</span>Porcentaje de interés</li>
+            <li id="n"><span>T</span>Tiempo</li>
+          </ul>
+        </div>
+      </section>
+      <section id="step-2" class="step step-2">
+        <!-- Aqui empieza el interes simple -->
+        <div class="container">
+          <h2 class="title"><span>I</span>Interés simple</h2>
+          <form id="simulator_I" class="simulator">
+            <label for="field_vp" class="column-full"
+              >Valor presente (VP) <input type="number" id="field_vp"
+            /></label>
+            <label for="field_i" class="column-full"
+              >Interés de la operación <input type="number" id="field_i"
+            /></label>
+            <label for="interest-type">Tipo de interés:</label>
+            <select id="interest-type">
+              <option value="anual">Anual</option>
+              <option value="mensual">Mensual</option>
+            </select>
+            <label for="field_n" class="column-full"
+              >Total de tiempo <input type="number" id="field_n"
+            /></label>
+            <label for="time-format">Formato de tiempo:</label>
+            <select id="time-format">
+              <option value="anios">Años</option>
+              <option value="meses">Meses</option>
+              <option value="dias">Días</option></select
+            ><br />
+            <div class="result"></div>
+            <button class="btn btn-primary">Calcular</button>
+            <button class="btn btn-primary btn-return">Volver</button>
+          </form>
+        </div>
+        <!-- Aqui acaba interes simple -->
+
+        <!-- Aqui empieza el valor futuro -->
+        <div class="container">
+          <h2 class="title"><span>VF</span>Cálculo de Valor futuro</h2>
+          <form id="simulator_vf" class="simulator">
+            <label for="field_vp" class="column-full"
+              >Valor presente (VP) <input type="number" id="field_vp"
+            /></label>
+            <label for="field_i" class="column-full"
+              >Interés de la operación <input type="number" id="field_i"
+            /></label>
+            <label for="interest-type">Tipo de interés:</label>
+            <select id="interest-type">
+              <option value="anual">Anual</option>
+              <option value="mensual">Mensual</option>
+            </select>
+            <label for="field_n" class="column-full"
+              >Total de tiempo <input type="number" id="field_n"
+            /></label>
+            <label for="time-format">Formato de tiempo:</label>
+            <select id="time-format">
+              <option value="anios">Años</option>
+              <option value="meses">Meses</option>
+              <option value="dias">Días</option></select
+            ><br />
+            <div class="result"></div>
+            <button class="btn btn-primary">Calcular</button>
+            <button class="btn btn-primary btn-return">Volver</button>
+          </form>
+        </div>
+        <!-- Aqui termina el valor futuro -->
+
+        <!-- Aqui empieza el valor presente -->
+        <div class="container">
+          <h2 class="title"><span>VP</span>Cálculo de Valor presente</h2>
+          <form id="simulator_vp" class="simulator">
+            <label for="field_vf" class="column-full"
+              >Valor futuro (VF)
+              <input type="number" id="field_vf" />
+            </label>
+            <label for="field_i" class="column-full"
+              >Interés de la operación
+              <input type="number" id="field_i" />
+            </label>
+            <label for="interest-type">Tipo de interés:</label>
+            <select id="interest-type">
+              <option value="anual">Anual</option>
+              <option value="mensual">Mensual</option>
+            </select>
+            <label for="field_n" class="column-full"
+              >Total de tiempo
+              <input type="number" id="field_n" />
+            </label>
+            <label for="time-format">Formato de tiempo:</label>
+            <select id="time-format">
+              <option value="anios">Años</option>
+              <option value="meses">Meses</option>
+              <option value="dias">Días</option></select
+            ><br />
+            <div class="result"></div>
+            <button class="btn btn-primary">Calcular</button>
+            <button class="btn btn-primary btn-return">Volver</button>
+          </form>
+        </div>
+        <!-- Aqui empieza el valor futuro -->
+
+        <!-- Aqui empieza el interes -->
+        <div class="container">
+          <h2 class="title"><span>I</span>Cálculo de Interés</h2>
+          <form id="simulator_i" class="simulator">
+            <label for="field_vf" class="column-full"
+              >Valor futuro (VF)
+              <input type="number" id="field_vf" />
+            </label>
+
+            <label for="field_vp" class="column-full"
+              >Valor presente (VP)
+              <input type="number" id="field_vp" />
+            </label>
+
+            <label for="field_n" class="column-full"
+              >Total de tiempo
+              <input type="number" id="field_n" />
+            </label>
+
+            <label for="time-format">Formato de tiempo:</label>
+            <select id="time-format">
+              <option value="anios">Años</option>
+              <option value="meses">Meses</option>
+              <option value="dias">Días</option></select
+            ><br />
+            <div class="result"></div>
+            <button class="btn btn-primary">Calcular</button>
+            <button class="btn btn-primary btn-return">Volver</button>
+          </form>
+        </div>
+        <!-- Aqui termina el interes -->
+
+        <!-- Aqui empieza el tiempo -->
+        <div class="container">
+          <h2 class="title"><span>T</span> Cálculo de Tiempo</h2>
+          <form id="simulator_n" class="simulator">
+            <label for="field_vp" class="column-full"
+              >Valor futuro (VF)
+              <input type="number" id="field_vf" />
+            </label>
+
+            <label for="field_vp" class="column-full"
+              >Valor presente (VP)
+              <input type="number" id="field_vp" />
+            </label>
+
+            <label for="field_i" class="column-full"
+              >Interés de la operación
+              <input type="number" id="field_i" />
+            </label>
+
+            <label for="interest-type">Tipo de interés:</label>
+            <select id="interest-type">
+              <option value="anual">Anual</option>
+              <option value="mensual">Mensual</option>
+            </select>
+
+            <div class="result"></div>
+            <button class="btn btn-primary">Calcular</button>
+            <button class="btn btn-primary btn-return">Volver</button>
+          </form>
+        </div>
+        <!-- Aqui termina el tiempo -->
+      </section>
+    </main>
+    <button id="tooltipBtn" class="tooltip">?</button>
+    <div id="tooltip" class="tooltip-text">
+      El <strong> Interés simple (I) </strong> es el interés que se cobra sobre
+      el capital <strong> o valor presente (VP) </strong> que se presta por un
+      periodo concreto.<br /><br />
+      <strong> Valor Futuro (VF) </strong> es el valor que tendrá una inversión
+      en el futuro, considerando una tasa de interés o rendimiento. La fórmula
+      para calcular el valor futuro es: <strong>
+        (VF): VP * (1 + (I * T))</strong
+      ><br /><br />
+      El <strong> Valor Presente (VP) </strong> es el valor actual de una
+      cantidad de dinero que se va a recibir en el futuro, descontado a una tasa
+      de interés o rendimiento.<strong>(Capital),</strong> La fórmula para
+      calcular el valor presente es: <strong>(VP): VF / (1 + (I * T))</strong
+      ><br /><br />
+      El <strong> Porcentaje de Interés (i) </strong> es el costo de los fondos
+      prestados, generalmente expresado como un porcentaje. La fórmula para
+      calcular el porcentaje de interés es: <strong
+        >(i): (VF / VP - 1) / T</strong
+      ><br /><br />
+      El <strong> Total de tiempo (T) </strong> es la cantidad de tiempo en la
+      que se desea realizar la operación. La fórmula para calcular el total de
+      tiempo es: <strong>(T): (VF / VP - 1) / I</strong><br /><br />
+      Desarrollado por <strong>Daniel Pinedo</strong> <br />
+      <strong>Camilo Difilippo</strong> <br />
+      <strong>Wilson Manjarres</strong><br />
+      Todos los derechos reservados © 2024
+    </div>
+    <a id="backButton" class="back-button" href="../../index.html">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+        />
+      </svg>
+    </a>
+    <script src="../js/script_IS.js" defer></script>
+    <div id="ultimo"></div>
+  </body>
+</html>

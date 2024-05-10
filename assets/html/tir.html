@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style_IC.css" />
+    <title>Ingeniería económica</title>
+  </head>
+  <body>
+    <main>
+      <section id="step-1" class="step step-1 step__show">
+        <h2 class="title">¿Qué quieres calcular?</h2>
+        <div class="container">
+          <ul class="menu">
+            <li id="tir"><span>T</span>Tasa Interna de Retorno</li>
+          </ul>
+        </div>
+      </section>
+      <section id="step-2" class="step step-2">
+        <div class="container">
+          <h2 class="title"><span>TIR</span>Tasa interna de retorno</h2>
+          <form id="simulator_tir" class="simulator">
+            <label for="field_invesrsionInicial" class="column-full">
+              Inversión Inicial
+              <input type="number" id="field_inversionInicial" />
+            </label>
+
+            <label for="field_flujoEfectivo" class="column-full">
+              Flujo de efectivo
+              <input type="number" id="field_flujoEfectivo" /> </label
+            >
+            
+            <label for="field_i" class="column-full">
+              Interés del periodo
+              <input type="number" id="field_i" />
+            </label>
+            
+            <label for="interest-type">Tipo de interés:</label>
+            <select id="interest-type">
+              <option value="anual">Anual</option>
+              <option value="mensual">Mensual</option>
+            </select>
+            
+            <label for="field_n" class="column-full">
+              Total de periodos
+              <input type="number" id="field_n" />
+            </label><br />
+            <div class="result"></div>
+            <button class="btn btn-primary">Calcular</button>
+            <button class="btn btn-primary btn-return">Volver</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <button id="tooltipBtn" class="tooltip">?</button>
+    <div id="tooltip" class="tooltip-text">
+      <strong>Porcentaje de Interés (i):</strong> El costo de los fondos prestados, generalmente expresado como un porcentaje. La fórmula para calcular el porcentaje de interés es: <strong>(i): (VF / VP - 1) / N</strong><br /><br />
+    
+      <strong>Total de periodos (N):</strong> La cantidad de tiempo en la que se desea realizar la operación. La fórmula para calcular el total de tiempo es: <strong>(N): (VF / VP - 1) / I</strong><br /><br />
+    
+      <strong>Inversión Inicial:</strong> La cantidad de dinero que se invierte al principio de un proyecto, negocio o inversión. Representa el desembolso inicial que se realiza para iniciar una actividad económica o un proyecto.<br /><br />
+    
+      <strong>Flujo de Efectivo:</strong> Se refiere al movimiento de entrada y salida de dinero durante un período de tiempo determinado. En el contexto de la TIR, el flujo de efectivo se refiere a los ingresos y egresos generados por una inversión a lo largo de su vida útil. Es importante tener en cuenta todos los flujos de efectivo, incluyendo los costos iniciales, los ingresos generados y los costos de mantenimiento, para calcular con precisión la TIR.<br /><br />
+    
+      <strong>Fórmula de la Tasa Interna de Retorno (TIR):</strong> La fórmula de la TIR se utiliza para calcular la tasa de rendimiento de una inversión o proyecto, suponiendo que los flujos de efectivo generados por la inversión son reinvertidos a la misma tasa. La fórmula es la siguiente:
+      <strong>∑<sub>t=0</sub><sup>n</sup> Flujo de efectivo en el periodo t / (1 + TIR)<sup>t</sup> = 0</strong>
+      Donde:
+      - <em>Flujo de efectivo en el periodo t</em> representa los flujos de efectivo generados por la inversión en el período <em>t</em>.
+      - <em>TIR</em> es la Tasa Interna de Retorno, es el valor desconocido que se está tratando de calcular.
+      - <em>n</em> es el número total de periodos de la inversión.
+      La TIR es aquella tasa de descuento que hace que el valor presente neto (VPN) de los flujos de efectivo de una inversión sea igual a cero. Es una medida importante para evaluar la viabilidad y rentabilidad de un proyecto o inversión.<br /><br />
+    
+      Desarrollado por <strong>Daniel Pinedo</strong>, <strong>Camilo Difilippo</strong> y <strong>Wilson Manjarres</strong>. <br></br> los derechos reservados © 2024
+    </div>
+    
+
+    <a id="backButton" class="back-button" href="../../index.html">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+        />
+      </svg>
+    </a>
+    <script src="../js/script_TIR.js" defer></script>
+    <div id="ultimo"></div>
+  </body>
+</html>
